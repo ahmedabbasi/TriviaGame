@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid heading">
+        <div class="container">
+            <h1 class="display-4">Trivia Game</h1>
+        </div>
+    </div>
+
+    <div id="display">
+
+        <div class="main-container">
+            <div id="start-nav">
+                <nav class="navbar navbar-light bg-light" id="start-bar">
+                    <span class="navbar-brand mb-0 h1">
+                        <p>Start</p>
+                    </span>
+                </nav>
+                <div id="time-display">
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="form-check">
+                    <p>01 : Name the largest freshwater lake in the world?</p>
+                    <input class="form-check-input" type="radio" name="q1" id="exampleRadios1" value="answer 1 - q1">
+                    <label class="form-check-label" for="exampleRadios1">
+                        <p id="Opt-1">Lake Tahoe</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q1" id="exampleRadios2" value="answer 2 - q1">
+                    <label class="form-check-label" for="exampleRadios2">
+                        <p id="Opt-2">Superior Lake</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q1" id="exampleRadios3" value="answer 3 - q1">
+                    <label class="form-check-label" for="exampleRadios3">
+                        <p id="Opt-3">Lake Michigan</p>
+                    </label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <p>02 : Which country is Prague in?</p>
+                    <input class="form-check-input" type="radio" name="q2" id="exampleRadios4" value="answer 1 - q2">
+                    <label class="form-check-label" for="exampleRadios4">
+                        <p id="Opt-1">Armenia</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q2" id="exampleRadios5" value="answer 2 - q2">
+                    <label class="form-check-label" for="exampleRadios5">
+                        <p id="Opt-2">Germany</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q2" id="exampleRadios6" value="answer 3 - q2">
+                    <label class="form-check-label" for="exampleRadios6">
+                        <p id="Opt-3">Czech Republic</p>
+                    </label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <p>03 : Which country has the largets salt mine in the world</p>
+                    <input class="form-check-input" type="radio" name="q3" id="exampleRadios7" value="answer 1 - q3">
+                    <label class="form-check-label" for="exampleRadios7">
+                        <p id="Opt-1">Pakistan</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q3" id="exampleRadios8" value="answer 2 - q3">
+                    <label class="form-check-label" for="exampleRadios8">
+                        <p id="Opt-2">Canada</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q3" id="exampleRadios9" value="answer 3 - q3">
+                    <label class="form-check-label" for="exampleRadios9">
+                        <p id="Opt-3">Australia</p>
+                    </label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <p>04 : Which athlete has won the most Olympic medals?</p>
+                    <input class="form-check-input" type="radio" name="q4" id="exampleRadios10" value="answer 1 - q4">
+                    <label class="form-check-label" for="exampleRadios10">
+                        <p id="Opt-1">Michael Phelps</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q4" id="exampleRadios11" value="answer 2 - q4">
+                    <label class="form-check-label" for="exampleRadios11">
+                        <p id="Opt-2">Usain Bolt</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q4" id="exampleRadios12" value="answer 3 - q4">
+                    <label class="form-check-label" for="exampleRadios12">
+                        <p id="Opt-3">M.Green</p>
+                    </label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <p>05 : Which is the largets Desert in the world?</p>
+                    <input class="form-check-input" type="radio" name="q5" id="exampleRadios13" value="answer 1 - q5">
+                    <label class="form-check-label" for="exampleRadios13">
+                        <p id="Opt-1">Karakum</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q5" id="exampleRadios14" value="answer 2 - q5">
+                    <label class="form-check-label" for="exampleRadios14">
+                        <p id="Opt-2">Sahara</p>
+                    </label>
+                    <input class="form-check-input" type="radio" name="q5" id="exampleRadios15" value="answer 3 - q5">
+                    <label class="form-check-label" for="exampleRadios15">
+                        <p id="Opt-3">Antarctica</p>
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div id ="done-nav">
+                <nav class="navbar navbar-light bg-light" id="done-bar">
+                    <span class="navbar-brand mb-0 h1">
+                        <p>Done</p>
+                    </span>
+                </nav>
+            </div>
+            <div id ="score-nav">
+                <div id ="correctAns">
+                    <p>Correct Answers</p>
+                </div>
+                <div id ="wrongAns">
+                    <p>Wrong Answers</p>
+                </div>
+                <div id ="UnAns">
+                    <p>UnAnswered</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
