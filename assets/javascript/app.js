@@ -15,7 +15,7 @@ window.onload = function () {
         $("#content").show();
         $("#done-nav").show();
     });
-    $("#done-bar").click(function(){
+    $("#done-bar").click(function () {
         $("#content").hide();
         $("#score-nav").show();
         $("#done-nav").hide();
@@ -24,10 +24,81 @@ window.onload = function () {
 };
 
 //var timerRunning = false;
-var countCorrect=0;
-var countWrong=0;
-var unAnswered=0;
-var intervalId=0;
+var countCorrect = 0;
+var countWrong = 0;
+var unAnswered = 0;
+var intervalId = 0;
+
+
+function time0() {
+    var selValue1 = $('input[name=q1]:checked').val();
+    var selValue2 = $('input[name=q2]:checked').val();
+    var selValue3 = $('input[name=q3]:checked').val();
+    var selValue4 = $('input[name=q4]:checked').val();
+    var selValue5 = $('input[name=q5]:checked').val();
+
+    if (selValue1 === "answer 2 - q1") {
+        countCorrect++;
+        $("#correctAns").text("Correct Answers: " + countCorrect);
+    } else if ((selValue1 === "answer 1 - q1") || (selValue1 === "answer 3 - q1")) {
+        countWrong++;
+        $("#wrongAns").text("Wrong Answers: " + countWrong);
+    } else {
+        unAnswered++;
+        $("#UnAns").text("UnAnswered: " + unAnswered);
+    }
+
+
+
+    if (selValue2 === "answer 3 - q2") {
+        countCorrect++;
+        $("#correctAns").text("Correct Answers: " + countCorrect);
+    } else if ((selValue2 === "answer 1 - q2") || (selValue2 === "answer 2 - q2")) {
+        countWrong++;
+        $("#wrongAns").text("Wrong Answers: " + countWrong);
+    } else {
+        unAnswered++;
+        $("#UnAns").text("UnAnswered: " + unAnswered);
+    }
+
+
+    if (selValue3 === "answer 1 - q3") {
+        countCorrect++;
+        $("#correctAns").text("Correct Answers: " + countCorrect);
+    } else if ((selValue3 === "answer 2 - q3") || (selValue3 === "answer 3 - q3")) {
+        countWrong++;
+        $("#wrongAns").text("Wrong Answers: " + countWrong);
+    } else {
+        unAnswered++;
+        $("#UnAns").text("UnAnswered: " + unAnswered);
+    }
+
+
+    if (selValue4 === "answer 1 - q4") {
+        countCorrect++;
+        $("#correctAns").text("Correct Answers: " + countCorrect);
+    } else if ((selValue4 === "answer 2 - q4") || (selValue4 === "answer 3 - q4")) {
+        countWrong++;
+        $("#wrongAns").text("Wrong Answers: " + countWrong);
+    } else {
+        unAnswered++;
+        $("#UnAns").text("UnAnswered: " + unAnswered);
+    }
+
+
+    if (selValue5 === "answer 3 - q5") {
+        countCorrect++;
+        $("#correctAns").text("Correct Answers: " + countCorrect);
+    } else if ((selValue5 === "answer 2 - q5") || (selValue5 === "answer 1 - q5")) {
+        countWrong++;
+        $("#wrongAns").text("Wrong Answers: " + countWrong);
+    } else {
+        unAnswered++;
+        $("#UnAns").text("UnAnswered: " + unAnswered);
+    }
+}
+
+
 var timer = {
     time: 10,
 
@@ -49,13 +120,15 @@ var timer = {
             $("#content").hide();
             $("#score-nav").show();
             $("#done-nav").hide();
+            time0();
+            //event.preventDefault();
+
         }
     },
 
     stop: function () {
         timer.time === 0;
-        clearInterval(intervalId);           
-
+        clearInterval(intervalId);
         //timerRunning=false;
     },
 
@@ -85,87 +158,17 @@ if (countCorrect === 0) {
 if (countWrong === 0) {
     $("#wrongAns").text("Wrong Answers: " + 0);
 }
- if (unAnswered === 0) {
+if (unAnswered === 0) {
     $("#UnAns").text("UnAnswered: " + 0);
 }
 
 
 
+$("#done-bar").on('click', function (event) {
+    // Prevent page from reloading
+    event.preventDefault();
+    timer.stop();
+    time0();
 
 
-    $("#done-bar").on('click', function (event) {
-        // Prevent page from reloading
-        event.preventDefault();
-        var selValue1 = $('input[name=q1]:checked').val();
-        var selValue2 = $('input[name=q2]:checked').val();
-        var selValue3 = $('input[name=q3]:checked').val();
-        var selValue4 = $('input[name=q4]:checked').val();
-        var selValue5 = $('input[name=q5]:checked').val();
-
-        if (selValue1 === "answer 2 - q1") {
-            countCorrect++;
-            $("#correctAns").text("Correct Answers: " + countCorrect);
-        } else if ((selValue1 === "answer 1 - q1")||(selValue1 === "answer 3 - q1")) {
-            countWrong++;
-            $("#wrongAns").text("Wrong Answers: " + countWrong);
-        } else {
-            unAnswered++;
-            $("#UnAns").text("UnAnswered: " + unAnswered);
-        }
-        
-
-
-        if (selValue2 === "answer 3 - q2") {
-            countCorrect++;
-            $("#correctAns").text("Correct Answers: " + countCorrect);
-        } else if ((selValue2 === "answer 1 - q2")||(selValue2 === "answer 2 - q2")) {
-            countWrong++;
-            $("#wrongAns").text("Wrong Answers: " + countWrong);
-        } else {
-            unAnswered++;
-            $("#UnAns").text("UnAnswered: " + unAnswered);
-        }
-
-
-
-        if (selValue3 === "answer 1 - q3") {
-            countCorrect++;
-            $("#correctAns").text("Correct Answers: " + countCorrect);
-        } else if ((selValue3 === "answer 2 - q3")||(selValue3 === "answer 3 - q3")) {
-            countWrong++;
-            $("#wrongAns").text("Wrong Answers: " + countWrong);
-        } else {
-            unAnswered++;
-            $("#UnAns").text("UnAnswered: " + unAnswered);
-        }
-
-
-
-
-
-        if (selValue4 === "answer 1 - q4") {
-            countCorrect++;
-            $("#correctAns").text("Correct Answers: " + countCorrect);
-        } else if ((selValue4 === "answer 2 - q4")||(selValue4 === "answer 3 - q4")) {
-            countWrong++;
-            $("#wrongAns").text("Wrong Answers: " + countWrong);
-        } else {
-            unAnswered++;
-            $("#UnAns").text("UnAnswered: " + unAnswered);
-        }
-
-
-        if (selValue5 === "answer 3 - q5") {
-            countCorrect++;
-            $("#correctAns").text("Correct Answers: " + countCorrect);
-        } else if ((selValue5 === "answer 2 - q5")||(selValue5 === "answer 1 - q5")) {
-            countWrong++;
-            $("#wrongAns").text("Wrong Answers: " + countWrong);
-        } else {
-            unAnswered++;
-            $("#UnAns").text("UnAnswered: " + unAnswered);
-        }
-
-        console.log(countCorrect,countWrong)
-
-    })
+})
